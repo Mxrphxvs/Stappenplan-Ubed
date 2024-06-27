@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'DINText';  /* Een naam voor je lettertype */
+  src: url('/fonts/DINText-Regular.otf') format('opentype');  /* Pad naar je lettertypebestand */
+}
+
+body {
+  font-family: 'MijnCustomFont', sans-serif;
+}
+
+/* ***** */
+/* Stap 1 */
+/* ***** */
+
+.form__fieldset--hidden {
+    display: none;
+  }
+
+
+input[type="text"] {
+  /* border-color: #27BB66; */
+  text-align: center;
+  
+
+  padding: .4rem;
+
+  width: 100%;
+
+  /* color: #27BB66; */
+}
+
+legend{
+  margin: auto;
+}
+
+.form__fieldset--step-1 .form__group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label{
+  width: 100%;
+}
+
+button{
+  padding: 1rem 3rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: .875em;
+    font-weight: bold;
+    
+    max-height: 2.75em;
+    
+    border-radius: 99rem;
+    border: none;
+
+    color: #ffffff;
+    background-color: #27BB66;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+
+
+/* ***** */
+/* Stap 2 */
+/* ***** */
+
+
+.form__fieldset--step-2 {
+  width: 100%;
+  height: auto;
+}
+
+.tijdelijke-wrapper {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.form__group--radio {
+}
+
+.form__radio-label {
+}
+
+.form__radio-content {
+}
+
+.form__radio-image {
+}
+
+.form__radio-title {
+}
+
+.form__fieldset--step-2 input[type="radio"] {
+}
+
+.form__fieldset--step-2 input[type="radio"]:checked .form__group--radio {
+}

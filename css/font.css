@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'DINText';  /* Een naam voor je lettertype */
+    src: url('/fonts/DINText-Regular.otf') format('opentype');  /* Pad naar je lettertypebestand */
+}
+
+body {
+    font-family: 'MijnCustomFont', sans-serif;
+}

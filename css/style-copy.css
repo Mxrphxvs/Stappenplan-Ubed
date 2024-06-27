@@ -1,0 +1,168 @@
+
+
+
+/* ***** */
+/* Default page */
+/* ***** */
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.page {
+    padding: 0 30px;
+
+    max-width: 430px;
+}
+
+.page__wrapper {
+    width: 100%;
+    height: auto;
+}
+
+.header {
+    margin-bottom: 4rem;
+
+    width: 100%;
+    height: auto;
+
+    background-color: white;
+}
+
+.header__inner {
+    padding: 1rem 0;
+
+    width: 100%;
+}
+
+.header__nav {
+    width: 100%;
+}
+
+.header__list {
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.header__item {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.header__item:nth-child(1) {
+    position: absolute;
+    left: 0;
+}
+
+.header__link {
+}
+
+.header__logo {
+    width: 60px;
+}
+
+.main {
+    width: 100%;
+    height: 100svh;
+}
+
+.main__inner {
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.section__inner {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.section__image-wrapper {
+    overflow: hidden;
+
+    border-radius: .2rem;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.section__image {
+    object-fit: cover;
+
+    
+    width: 100%;
+    height: 100%;
+}
+
+.section__content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.section__title {
+    text-align: center;
+}
+
+.section__description {
+    text-align: center;
+}
+
+.section__cta {
+    padding: 1rem 3rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: .875em;
+    font-weight: bold;
+    
+    max-height: 2.75em;
+    
+    border-radius: 99rem;
+
+    color: #ffffff;
+    background-color: #27BB66;
+
+    transition: background-color 0.3s;
+}
+
+
+
+
+
+
+

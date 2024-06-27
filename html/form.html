@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welkom bij het stappenplan</title>
+
+   <link rel="stylesheet" href="/css/reset.css">
+   <link rel="stylesheet" href="/css/form.css">
+   <link rel="stylesheet" href="/css/font.css">
+
+   <script defer src="/js/form.js"></script>
+</head>
+<body>
+
+  <!-- Page -->
+  <div>
+
+    <!-- Page Layout -->
+    <div>
+
+      <main>
+
+        <div>
+
+          <form id="multi-step-form">
+            <!-- Fieldset 1 -->
+            <fieldset class="form__fieldset form__fieldset--step-1">
+              <legend>Stap 1: Vertel wat over jezelf</legend>
+              
+              <div class="form__group">
+                <label for="age">
+                  <input placeholder="leeftijd" type="text" id="age" name="age" required>
+                </label>
+               
+              </div>
+              
+              <div class="form__group">
+                <label for="height">
+                  <input placeholder="Lengte" type="text" id="height" name="height" required>
+                </label>
+               
+              </div>
+              
+              <div class="form__group">
+                <label for="weight">Gewicht (Optioneel):</label>
+                <input type="text" id="weight" name="weight">
+              </div>
+              
+              <div class="form__group">
+                <button type="button" class="form__next-button" data-next-step="2">Next step</button>
+              </div>
+            </fieldset>
+        
+            <!-- Fieldset 2 -->
+            <fieldset class="form__fieldset form__fieldset--step-2 form__fieldset--hidden">
+              <legend>Stap 2: Wat voor slaper ben je?</legend>
+              
+              <div class="tijdelijke-wrapper">
+            
+              <div class="form__group form__group--radio">
+                <input type="radio" id="stomach-sleeper" name="sleeping-position" value="stomach" required>
+                <label for="stomach-sleeper" class="form__radio-label">
+                  <div class="form__radio-content">
+                    <img src="https://placehold.co/1080x1080" alt="Buik slaper" class="form__radio-image">
+                    <span class="form__radio-title">Buik slaper</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form__group form__group--radio">
+                <input type="radio" id="back-sleeper" name="sleeping-position" value="back" required>
+                <label for="back-sleeper" class="form__radio-label">
+                  <div class="form__radio-content">
+                    <img src="https://placehold.co/1080x1080" alt="Rug slaper" class="form__radio-image">
+                    <span class="form__radio-title">Rug slaper</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form__group form__group--radio">
+                <input type="radio" id="right-side-sleeper" name="sleeping-position" value="right-side" required>
+                <label for="right-side-sleeper" class="form__radio-label">
+                  <div class="form__radio-content">
+                    <img src="https://placehold.co/1080x1080" alt="Rechterzij Slaper" class="form__radio-image">
+                    <span class="form__radio-title">Rechterzij Slaper</span>
+                  </div>
+                </label>
+              </div>
+              
+              <div class="form__group form__group--radio">
+                <input type="radio" id="left-side-sleeper" name="sleeping-position" value="left-side" required>
+                <label for="left-side-sleeper" class="form__radio-label">
+                  <div class="form__radio-content">
+                    <img src="https://placehold.co/1080x1080" alt="Linkerzij Slaper" class="form__radio-image">
+                    <span class="form__radio-title">Linkerzij Slaper</span>
+                  </div>
+                </label>
+              </div>
+            
+              <div class="form__group">
+                <button type="button" class="form__next-button" data-next-step="3">Next step</button>
+              </div>
+
+            </div>
+
+            </fieldset>            
+        
+            <!-- Fieldset 3 -->
+            <fieldset class="form__fieldset form__fieldset--step-3 form__fieldset--hidden">
+              <legend>Stap 3: Wat voor bed zoek je?</legend>
+              
+              <h3>Formaat bed</h3>
+              <div class="form__group">
+                <input type="radio" id="size-140" name="bed-size" value="140x200cm" required>
+                <label for="size-140">140x200cm</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="size-160" name="bed-size" value="160x200cm" required>
+                <label for="size-160">160x200cm</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="size-180" name="bed-size" value="180x200cm" required>
+                <label for="size-180">180x200cm</label>
+              </div>
+        
+              <h3>Voorkeur hardheid matras</h3>
+              <div class="form__group">
+                <input type="radio" id="soft" name="mattress-firmness" value="soft" required>
+                <label for="soft">Zacht</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="medium" name="mattress-firmness" value="medium" required>
+                <label for="medium">Medium</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="hard" name="mattress-firmness" value="hard" required>
+                <label for="hard">Hard</label>
+              </div>
+        
+              <h3>Type bed</h3>
+              <div class="form__group">
+                <input type="radio" id="mattress-1" name="bed-type" value="matras-1" required>
+                <label for="mattress-1">Matras 1</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="mattress-2" name="bed-type" value="matras-2" required>
+                <label for="mattress-2">Matras 2</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="mattress-3" name="bed-type" value="matras-3" required>
+                <label for="mattress-3">Matras 3</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="mattress-4" name="bed-type" value="matras-4" required>
+                <label for="mattress-4">Matras 4</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="mattress-5" name="bed-type" value="matras-5" required>
+                <label for="mattress-5">Matras 5</label>
+              </div>
+              
+              <div class="form__group">
+                <input type="radio" id="mattress-6" name="bed-type" value="matras-6" required>
+                <label for="mattress-6">Matras 6</label>
+              </div>
+        
+              <h3>Budget</h3>
+              <div class="form__group">
+                <label for="budget">Budget:</label>
+                <input type="range" id="budget" name="budget" min="0" max="5000">
+              </div>
+        
+              <div class="form__group">
+                <button type="submit">Submit</button>
+              </div>
+            </fieldset>
+          </form>
+        
+
+        </div>
+
+      </main>
+
+
+    </div>
+
+  </div>
+    
+    
+</body>
+</html>
