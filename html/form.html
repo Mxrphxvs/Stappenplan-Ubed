@@ -7,27 +7,55 @@
     <title>Welkom bij het stappenplan</title>
 
    <link rel="stylesheet" href="/css/reset.css">
+   <link rel="stylesheet" href="/css/body-wrapper.css">
+   <link rel="stylesheet" href="/css/header-menu.css">
+
    <link rel="stylesheet" href="/css/form.css">
    <link rel="stylesheet" href="/css/font.css">
 
    <script defer src="/js/form.js"></script>
+   <script defer src="/js/app.js"></script>
 </head>
 <body>
 
-  <!-- Page -->
-  <div>
+  <div class="page">
 
-    <!-- Page Layout -->
-    <div>
+    <div class="page__wrapper">
+
+      <header class="header">
+
+        <div class="header__inner">
+  
+          <nav class="header__nav">
+  
+            <ul class="header__list">
+  
+              <li class="header__item">
+                <a href="#" class="header__link">☰</a>
+              </li>
+  
+              <li class="header__item">
+                <a href="/html/default-page-new.html" class="header__link"> 
+                  <img src="/afbeeldingen/logo.png" alt="Logo" class="header__logo">
+                </a>
+              </li>
+  
+            </ul>
+  
+          </nav>
+  
+        </div>
+  
+      </header>
 
       <main>
 
         <div>
-
+          
           <form id="multi-step-form">
-            <!-- Fieldset 1 -->
+            
             <fieldset class="form__fieldset form__fieldset--step-1">
-              <legend>Stap 1: Vertel wat over jezelf</legend>
+              <legend><span>Stap 1:</span> <span>Vertel wat over jezelf</span></legend>
               
               <div class="form__group">
                 <label for="age">
@@ -44,18 +72,20 @@
               </div>
               
               <div class="form__group">
-                <label for="weight">Gewicht (Optioneel):</label>
-                <input type="text" id="weight" name="weight">
+                <label for="weight">
+                  <input placeholder="Gewicht (optioneel)" type="text" inputmode="numeric" id="weight" name="weight" required>
+                </label>
               </div>
               
               <div class="form__group">
-                <button type="button" class="form__next-button" data-next-step="2">Next step</button>
+                <button type="button" class="form__next-button" data-next-step="2">Volgende stap</button>
+
               </div>
             </fieldset>
         
-            <!-- Fieldset 2 -->
+       
             <fieldset class="form__fieldset form__fieldset--step-2 form__fieldset--hidden">
-              <legend>Stap 2: Wat voor slaper ben je?</legend>
+              <legend> <span>Stap 2:</span> <span> Wat voor slaper ben je? </span></legend>
               
               <div class="tijdelijke-wrapper">
             
@@ -63,7 +93,7 @@
                 <input type="radio" id="stomach-sleeper" name="sleeping-position" value="stomach" required>
                 <label for="stomach-sleeper" class="form__radio-label">
                   <div class="form__radio-content">
-                    <img src="https://placehold.co/1080x1080" alt="Buik slaper" class="form__radio-image">
+                    <img src="/afbeeldingen/buikslaper.svg" alt="Buik slaper" class="form__radio-image">
                     <span class="form__radio-title">Buik slaper</span>
                   </div>
                 </label>
@@ -73,7 +103,7 @@
                 <input type="radio" id="back-sleeper" name="sleeping-position" value="back" required>
                 <label for="back-sleeper" class="form__radio-label">
                   <div class="form__radio-content">
-                    <img src="https://placehold.co/1080x1080" alt="Rug slaper" class="form__radio-image">
+                    <img src="/afbeeldingen/rugslaper.svg" alt="Rug slaper" class="form__radio-image">
                     <span class="form__radio-title">Rug slaper</span>
                   </div>
                 </label>
@@ -83,7 +113,7 @@
                 <input type="radio" id="right-side-sleeper" name="sleeping-position" value="right-side" required>
                 <label for="right-side-sleeper" class="form__radio-label">
                   <div class="form__radio-content">
-                    <img src="https://placehold.co/1080x1080" alt="Rechterzij Slaper" class="form__radio-image">
+                    <img src="/afbeeldingen/rechterzij-slaper.svg" alt="Rechterzij Slaper" class="form__radio-image">
                     <span class="form__radio-title">Rechterzij Slaper</span>
                   </div>
                 </label>
@@ -93,7 +123,7 @@
                 <input type="radio" id="left-side-sleeper" name="sleeping-position" value="left-side" required>
                 <label for="left-side-sleeper" class="form__radio-label">
                   <div class="form__radio-content">
-                    <img src="https://placehold.co/1080x1080" alt="Linkerzij Slaper" class="form__radio-image">
+                    <img src="/afbeeldingen/linkerzij-slaper.svg" alt="Linkerzij Slaper" class="form__radio-image">
                     <span class="form__radio-title">Linkerzij Slaper</span>
                   </div>
                 </label>
@@ -107,77 +137,98 @@
 
             </fieldset>            
         
-            <!-- Fieldset 3 -->
+            
             <fieldset class="form__fieldset form__fieldset--step-3 form__fieldset--hidden">
-              <legend>Stap 3: Wat voor bed zoek je?</legend>
+              <legend><span>Stap 3:</span> <span>Wat voor bed zoek je?</span> </legend>
               
               <h3>Formaat bed</h3>
-              <div class="form__group">
-                <input type="radio" id="size-140" name="bed-size" value="140x200cm" required>
-                <label for="size-140">140x200cm</label>
+              <div class="form__group-wrapper">
+                <div class="form__group">
+                  <input type="radio" id="size-140" name="bed-size" value="140x200cm" required>
+                  <label for="size-140">140x200cm</label>
+                </div>
+             
+              
+                <div class="form__group">
+                  <input type="radio" id="size-160" name="bed-size" value="160x200cm" required>
+                  <label for="size-160">160x200cm</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="size-180" name="bed-size" value="180x200cm" required>
+                  <label for="size-180">180x200cm</label>
+                </div>
               </div>
               
-              <div class="form__group">
-                <input type="radio" id="size-160" name="bed-size" value="160x200cm" required>
-                <label for="size-160">160x200cm</label>
-              </div>
-              
-              <div class="form__group">
-                <input type="radio" id="size-180" name="bed-size" value="180x200cm" required>
-                <label for="size-180">180x200cm</label>
-              </div>
-        
               <h3>Voorkeur hardheid matras</h3>
-              <div class="form__group">
-                <input type="radio" id="soft" name="mattress-firmness" value="soft" required>
-                <label for="soft">Zacht</label>
+              <div class="form__group-wrapper">
+                <div class="form__group">
+                  <input type="radio" id="soft" name="mattress-firmness" value="soft" required>
+                  <label for="soft">Zacht</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="medium" name="mattress-firmness" value="medium" required>
+                  <label for="medium">Medium</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="hard" name="mattress-firmness" value="hard" required>
+                  <label for="hard">Hard</label>
+                </div>
               </div>
-              
-              <div class="form__group">
-                <input type="radio" id="medium" name="mattress-firmness" value="medium" required>
-                <label for="medium">Medium</label>
-              </div>
-              
-              <div class="form__group">
-                <input type="radio" id="hard" name="mattress-firmness" value="hard" required>
-                <label for="hard">Hard</label>
-              </div>
-        
+
               <h3>Type bed</h3>
-              <div class="form__group">
-                <input type="radio" id="mattress-1" name="bed-type" value="matras-1" required>
-                <label for="mattress-1">Matras 1</label>
+              <div class="form__group-wrapper">
+                <div class="form__group">
+                  <input type="radio" id="mattress-1" name="bed-type" value="matras-1" required>
+                  <label for="mattress-1">Matras 1</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="mattress-2" name="bed-type" value="matras-2" required>
+                  <label for="mattress-2">Matras 2</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="mattress-3" name="bed-type" value="matras-3" required>
+                  <label for="mattress-3">Matras 3</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="mattress-4" name="bed-type" value="matras-4" required>
+                  <label for="mattress-4">Matras 4</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="mattress-5" name="bed-type" value="matras-5" required>
+                  <label for="mattress-5">Matras 5</label>
+                </div>
+                
+                <div class="form__group">
+                  <input type="radio" id="mattress-6" name="bed-type" value="matras-6" required>
+                  <label for="mattress-6">Matras 6</label>
+                </div>
               </div>
-              
-              <div class="form__group">
-                <input type="radio" id="mattress-2" name="bed-type" value="matras-2" required>
-                <label for="mattress-2">Matras 2</label>
-              </div>
-              
-              <div class="form__group">
-                <input type="radio" id="mattress-3" name="bed-type" value="matras-3" required>
-                <label for="mattress-3">Matras 3</label>
-              </div>
-              
-              <div class="form__group">
-                <input type="radio" id="mattress-4" name="bed-type" value="matras-4" required>
-                <label for="mattress-4">Matras 4</label>
-              </div>
-              
-              <div class="form__group">
-                <input type="radio" id="mattress-5" name="bed-type" value="matras-5" required>
-                <label for="mattress-5">Matras 5</label>
-              </div>
-              
-              <div class="form__group">
-                <input type="radio" id="mattress-6" name="bed-type" value="matras-6" required>
-                <label for="mattress-6">Matras 6</label>
-              </div>
-        
+
               <h3>Budget</h3>
-              <div class="form__group">
+              <!-- <div class="form__group">
                 <label for="budget">Budget:</label>
                 <input type="range" id="budget" name="budget" min="0" max="5000">
+              </div> -->
+              <!-- <div class="price-range-slider">
+  
+                <p class="range-value">
+                  <input type="text" id="amount" readonly>
+                </p>
+                <div id="slider-range" class="range-bar"></div>
+                
+              </div> -->
+
+              <div class="slider-container">
+                <input type="range" id="lower" min="0" max="100" value="25" class="slider" aria-label="Lower slider">
+                <input type="range" id="upper" min="0" max="100" value="75" class="slider" aria-label="Upper slider">
+                <div class="slider-track"></div>
               </div>
         
               <div class="form__group">
@@ -188,7 +239,16 @@
         
 
         </div>
+        <div class="loading__screen">
 
+          <img src="/afbeeldingen/loading-gif.gif" alt="jumping on bed gif" id="loadingImage">
+          <h3>Een ogenblik</h3>
+          <p>De resultaten worden verzameld en op basis daarvan maakt Ubed een selectie</p>
+        </div>
+
+
+           
+        </div>
       </main>
 
 

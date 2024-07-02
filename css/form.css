@@ -15,21 +15,45 @@ body {
     display: none;
   }
 
+fieldset{
+  min-inline-size: 0;
+  }
+
 
 input[type="text"] {
   /* border-color: #27BB66; */
   text-align: center;
   
-
+/*  
   padding: .4rem;
-
-  width: 100%;
+*/
+  width: 23.125rem; 
 
   /* color: #27BB66; */
+
+  padding: 0.6rem; /* Vergroot de padding voor een betere leesbaarheid */
+    border: 2px solid #BEBEBE; /* Specifieke groene rand */
+    border-radius: 10px; /* Afgeronde hoeken */
+    
+    margin: 0.625rem 0;
+    font-size: 1em; /* Standaard lettergrootte */
+}
+
+input[type="text"]:valid{
+  border-color: #27BB66;
 }
 
 legend{
-  margin: auto;
+  text-align: center; /* Centreren van de tekst */
+  width: 100%; /* Verzeker volledige breedte gebruik */
+  font-size: 1.25em; /* Vergroot de lettergrootte */
+  font-weight: bold;
+  margin-bottom: 1em; /* Voeg ruimte toe onder de titel */
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 10.5rem;
 }
 
 .form__fieldset--step-1 .form__group{
@@ -39,9 +63,16 @@ legend{
   align-items: center;
 }
 
+
+.form__group {
+  width: 100%; /* Zorg dat de form__group de volledige breedte neemt */
+
+}
+
 label{
   width: 100%;
 }
+
 
 button{
   padding: 1rem 3rem;
@@ -67,8 +98,19 @@ button{
     cursor: pointer;
 
     transition: background-color 0.3s;
+
+    margin-top: 4.75rem;
+    padding: 1rem 2.2rem;
 }
 
+button:disabled {
+  background-color: #BEBEBE; /* Grijze kleur wanneer uitgeschakeld */
+  cursor: not-allowed; /* Cursor verandert om de onbruikbaarheid te tonen */
+}
+
+fieldset{
+  border: none;
+}
 
 
 /* ***** */
@@ -88,23 +130,262 @@ button{
   grid-gap: 1rem;
 }
 
+
 .form__group--radio {
+  background-color: #CCEFEA;
+  height: 15rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: .8rem;
 }
 
 .form__radio-label {
+  height: 100%;
 }
 
 .form__radio-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  height: 100%;
+
+  padding: 0.5rem;
+  position: relative;
 }
 
 .form__radio-image {
+  width: 8rem;
+  /* height:  */
 }
 
 .form__radio-title {
+  bottom: 1rem;
+  font-weight: bold;
+
+  position: absolute;
 }
 
 .form__fieldset--step-2 input[type="radio"] {
+  display: none;
+  border-color: #27BB66;
 }
 
-.form__fieldset--step-2 input[type="radio"]:checked .form__group--radio {
+
+
+.form__fieldset--step-2 .form__group--radio:has(input[type="radio"]:checked){
+  border: .5rem solid #27BB66;
+}
+
+/* ***** */
+/* Stap 3 */
+/* ***** */
+
+h3{
+  text-align: center;
+}
+
+.form__fieldset--step-3 .form__group label {
+  display: inline-block;
+
+  padding: .5rem 0rem;
+  width: 1fr;
+  /* flex: 1 100%; */
+  /* flex-basis: auto; */
+
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+
+  text-align: center; /* Zorgt voor centrering van de tekst */
+}
+
+/* Verandert de stijl wanneer de radio button in step-3 geselecteerd is */
+.form__fieldset--step-3 .form__group input[type="radio"]:checked + label {
+  background-color: #27BB66;
+  border-color: #27BB66;
+  color: white;
+}
+
+/* Optionele hover effect voor step-3 */
+.form__fieldset--step-3 .form__group label:hover {
+  background-color: #ddd;
+}
+
+/* Verbergt de standaard radio button alleen in step-3 */
+.form__fieldset--step-3 .form__group input[type="radio"] {
+  display: none;
+}
+
+.form__group-wrapper:nth-of-type(1), .form__group-wrapper:nth-of-type(2){
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  justify-content: center;
+
+  gap: .3em;
+
+}
+
+.form__group-wrapper:nth-of-type(3){
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 100%;
+  justify-content: center;
+
+  gap: .3em;
+}
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 3em; /* Geeft ruimte voor de sliders */
+}
+
+.slider {
+  -webkit-appearance: none; /* Verwijdert standaard stijlen voor WebKit browsers */
+  appearance: none;
+  width: 100%; /* Volledige breedte van de container */
+  height: 3px; /* Hoogte van de slider */
+  background: transparent; /* Maakt de standaard slider achtergrond transparant */
+  outline: none; /* Verwijdert de outline */
+  opacity: 0.7; /* Maakt de sliders licht doorschijnend */
+  -webkit-transition: .2s; /* Transitie voor het veranderen van de slider */
+  transition: opacity .2s;
+  position: absolute; /* Positioneert beide sliders op dezelfde positie */
+  top: 1.5em; /* Centreert verticaal */
+  pointer-events: none; /* Maakt de slider onklikbaar */
+}
+
+.slider-track {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(108, 45, 45); /* Achtergrondkleur van de slider-track */
+  top: 1.5em;
+  z-index: -1; /* Zorgt dat de track achter de handles ligt */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Verwijdert de standaard stijlen voor WebKit browsers */
+  appearance: none;
+  width: 20px; /* Breedte van de handle */
+  height: 20px; /* Hoogte van de handle */
+  background: #4CAF50; /* Kleur van de handle */
+  cursor: pointer; /* Cursor als pointer */
+  border-radius: 50%; /* Ronde handles */
+  pointer-events: all; /* Maakt de handles klikbaar */
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+
+/* ***** */
+/* Loading screen */
+/* ***** */
+
+.loading__screen img{
+  margin: auto;
+}
+.loading__screen h3{
+  margin-top: 3.5rem;
+
+  color: #A7A7A7;
+}
+
+.loading__screen p{
+  text-align: center;
+
+  color: #A7A7A7;
+  
+  margin-bottom: 20rem;
+}
+
+/* ***** */
+/* Results page */
+/* ***** */
+
+.Resultspage{
+  text-align: center;
+}
+
+.Resultspage img{
+  margin-top: 1rem;
+margin-bottom: 2rem;
+}
+
+.Resultspage h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+hr{
+  /* margin-top: 1rem; */
+  margin-bottom: 1.5rem;
+}
+
+dt{
+  font-weight: 900;
+}
+
+dl{
+  display: flex;
+  flex-direction: column;
+  
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+dl div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.result-btn a{
+  padding: 1.6rem 2rem;
+
+  text-decoration: none;
+  font-size: .875rem;
+  font-weight: bold;
+  
+  max-height: 2.75rem;
+  
+  border-radius: 99rem;
+
+  color: #ffffff;
+  background-color: #27BB66;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-btn a:nth-of-type(2){
+  background-color: #000000;
+}
+
+
+.result-btn{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-top: 4rem;
 }

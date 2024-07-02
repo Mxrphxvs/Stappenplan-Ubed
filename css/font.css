@@ -1,8 +1,18 @@
 @font-face {
     font-family: 'DINText';  /* Een naam voor je lettertype */
-    src: url('/fonts/DINText-Regular.otf') format('opentype');  /* Pad naar je lettertypebestand */
+    src: url('/fonts/DINText-Regular.otf') format('opentype');
+
+}
+
+@font-face {
+    font-family: 'DINText-bold';  /* Een naam voor je lettertype */
+    src: url('/fonts/DINText-Bold.otf') format('opentype');
 }
 
 body {
-    font-family: 'MijnCustomFont', sans-serif;
+    font-family: 'DINText', sans-serif;
+}
+
+h1, h2, h3, span, dt{
+    font-family: 'DINText-bold', sans-serif;
 }

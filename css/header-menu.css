@@ -1,0 +1,55 @@
+.header {
+    margin-bottom: 4rem;
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(228, 156, 156);  */
+}
+
+.header__inner {
+    padding: 1rem 0;
+    width: 100%;
+    
+    display: flex; /* Zorgt ervoor dat de nav zich gedraagt als een flex container */
+    align-items: center; /* Dit zal alles binnen de header__inner verticaal centreren */
+}
+
+.header__nav {
+    width: 100%;
+}
+
+.header__list {
+    margin: 0;
+    padding: 0;
+    
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Verticaal centreren van alle items in de lijst */
+    justify-content: center; /* Horizontaal centreren van items */
+}
+
+.header__item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header__item:nth-child(1) a {
+    position: absolute;
+    left: 0; 
+    top: 50%; 
+
+    color:#000000;
+    
+    transform: translateY(-50%); /* Verplaatst de link omhoog met 50% van zijn eigen hoogte */
+    
+    font-size: 3.25em; /* Grootte van het hamburgermenu icoon */
+    display: inline-block;
+    text-decoration: none; /* Verwijdert onderstreping */
+    line-height: 1; /* Verbetert de positionering en vermijdt extra ruimte */
+}
+
+.header__logo {
+    width: 3.75rem; /* Stel de breedte van het logo in, zorg dat het logo goed uitgelijnd blijft */
+    height: auto; /* Behoudt de beeldverhouding van het logo */
+}
